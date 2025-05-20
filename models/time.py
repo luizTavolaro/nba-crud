@@ -5,3 +5,6 @@ class Time:
         self.cidade = cidade
         self.dataFundacao = dataFundacao
         self.tecnico = tecnico
+        
+    def to_dict(self):
+        return self.__dict__

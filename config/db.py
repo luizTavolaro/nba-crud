@@ -1,10 +1,6 @@
-import mysql.connector
+import sqlite3
 
 def get_connection():
-    return mysql.connector.connect(
-        host="",
-        user="",
-        password="",
-        database=""
-    )
-
+    conn = sqlite3.connect("./config/test.db", timeout=5)
+    conn.row_factory = sqlite3.Row
+    return conn
