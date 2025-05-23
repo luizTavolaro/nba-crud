@@ -6,7 +6,7 @@ class TimeRepository:
         print(f"[REPOSITORY] Inserindo time: {time.nome}")
         conn = get_connection()
         cursor = conn.cursor()
-        sql = "INSERT INTO times (id, nome, cidade, dataFundacao, tecnico) VALUES (?, ?, ?, ?, ?)"
+        sql = "INSERT INTO times (id, nome, cidade, dataFundacao, tecnico) VALUES (%s, %s, %s, %s, %s)"
         cursor.execute(sql, (time.id, time.nome, time.cidade, time.dataFundacao, time.tecnico))
         conn.commit()
         cursor.close()
@@ -27,7 +27,7 @@ class TimeRepository:
         print(f"[REPOSITORY] Atualizando time id={time.id}")
         conn = get_connection()
         cursor = conn.cursor()
-        sql = "UPDATE times SET nome=?, cidade=?, dataFundacao=?, tecnico=? WHERE id=?"
+        sql = "UPDATE times SET nome=%s, cidade=%s, dataFundacao=%s, tecnico=%s WHERE id=%s"
         cursor.execute(sql, (time.nome, time.cidade, time.dataFundacao, time.tecnico, time.id))
         conn.commit()
         cursor.close()
@@ -37,7 +37,7 @@ class TimeRepository:
         print(f"[REPOSITORY] Deletando time id={id}")
         conn = get_connection()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM times WHERE id = ?", (id,))
+        cursor.execute("DELETE FROM times WHERE id = %s", (id,))
         conn.commit()
         cursor.close()
         conn.close()
