@@ -1,5 +1,5 @@
 # POST
-curl -X POST http://localhost:30000/times \
+curl -X POST http://ec2-18-205-194-110.compute-1.amazonaws.com:30000/times \
   -H "Content-Type: application/json" \
   -d '{
     "id": 6,
@@ -10,10 +10,10 @@ curl -X POST http://localhost:30000/times \
 }';
 
 # GET
-curl http://localhost:30000/times;
+curl http://ec2-18-205-194-110.compute-1.amazonaws.com:30000/times;
 
 #PUT 
-curl -X PUT http://localhost:30000/times/6 \
+curl -X PUT http://ec2-18-205-194-110.compute-1.amazonaws.com:30000/times/6 \
   -H "Content-Type: application/json" \
   -d '{
     "nome": "Chicago Bulls Atualizado",
@@ -23,4 +23,4 @@ curl -X PUT http://localhost:30000/times/6 \
 }';
 
 #DELETE 
-curl -X DELETE http://localhost:30000/times/6;
+curl -X DELETE http://ec2-18-205-194-110.compute-1.amazonaws.com:30000/times/6;
