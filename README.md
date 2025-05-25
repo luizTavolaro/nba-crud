@@ -79,3 +79,6 @@ source .venv/Scrpits/activate
 pip install -r requirements.txt -t .
 zip -r lambda_function.zip .
 ```
+
+### 🎥 Apresentação
+https://youtu.be/P8erqX1yQk8
